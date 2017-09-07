@@ -1,0 +1,12 @@
+/DeleteDiaryEntry.class
+/DeleteDiaryEntryResponse.class
+/FindOne.class
+/FindOneResponse.class
+/GetAllDiaryEntries.class
+/GetAllDiaryEntriesResponse.class
+/SaveDiaryEntry.class
+/SaveDiaryEntryResponse.class
+/SayHello.class
+/SayHelloResponse.class
+/UpdateDiaryEntry.class
+/UpdateDiaryEntryResponse.class

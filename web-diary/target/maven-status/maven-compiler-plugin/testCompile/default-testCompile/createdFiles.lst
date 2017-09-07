@@ -1,0 +1,3 @@
+com\brolly\diary\test\templates\TestTemplate.class
+com\brolly\diary\utils\DateUtilsTest.class
+com\brolly\diary\soap\DiaryEntryTestMarshall.class

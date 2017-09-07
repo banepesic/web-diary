@@ -1,0 +1,59 @@
+package com.brolly.diary.service.impl;
+
+import java.util.List;
+
+import javax.jws.WebService;
+
+import com.brolly.diary.domain.DiaryEntry;
+import com.brolly.diary.service.CrudService;
+
+/**
+ * DiaryEntry CRUD operations impl. 
+ * @author Bane
+ *
+ */
+@WebService(endpointInterface = "com.brolly.diary.service.CrudService")
+public class CrudServiceImpl implements CrudService{
+
+	/*TODO - if needed
+	@Inject
+    private CrudRepository CrudRepositoryImpl;
+	*/
+	
+	public CrudServiceImpl() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public String sayHello(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public DiaryEntry findOne(Integer entryID) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<DiaryEntry> getAllDiaryEntries() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public Integer saveDiaryEntry(DiaryEntry entry) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void updateDiaryEntry(Integer entryID) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void deleteDiaryEntry(Integer entryID) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}

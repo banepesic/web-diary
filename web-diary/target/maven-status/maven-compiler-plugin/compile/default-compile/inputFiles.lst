@@ -1,0 +1,15 @@
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\spi\ServiceFacade.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\utils\AppConstants.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\jersey\services\RestServiceDummy.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\rest\RestClientTest.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\service\DiaryEntryCompareService.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\dao\hibernate\HibernateUtil.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\service\impl\CrudServiceImpl.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\rest\BaseResource.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\dao\hibernate\HibernateCRUDTest.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\rest\DiaryEntryResource.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\utils\DateUtils.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\service\CrudService.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\utils\CustomDateSerializer.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\domain\DiaryEntry.java
+C:\temp\diary\web-diary\src\main\java\com\brolly\diary\rest\BaseCommonResource.java

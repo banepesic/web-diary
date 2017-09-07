@@ -1,0 +1,44 @@
+package com.brolly.diary.service;
+
+import java.util.List;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+import com.brolly.diary.domain.DiaryEntry;
+
+/**
+ * defines CRUD operations on all domain objects
+ * @author Bane
+ *
+ */
+@WebService
+public interface CrudService {
+
+	
+	@WebMethod
+	public String sayHello(String name);
+	
+	/*DIARY ENTRY section*/
+	@WebMethod
+	public DiaryEntry findOne(Integer entryID);
+	
+	@WebMethod
+	public List<DiaryEntry> getAllDiaryEntries();
+	
+	@WebMethod
+	public Integer saveDiaryEntry(DiaryEntry entry);
+
+	@WebMethod
+	public void updateDiaryEntry(Integer entryID);
+
+	@WebMethod
+	public void deleteDiaryEntry(Integer entryID);
+
+	/*Other resource section*/
+	/* 
+	 * public SomeDomainObject fineOne(Integer domainObjID); 
+	 * ...
+	 * */
+	
+}

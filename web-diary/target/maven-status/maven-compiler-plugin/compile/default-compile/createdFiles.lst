@@ -1,0 +1,4 @@
+com\brolly\diary\utils\CustomDateSerializer.class
+com\brolly\diary\domain\DiaryEntry.class
+com\brolly\diary\jersey\services\RestServiceDummy.class
+com\brolly\diary\utils\DateUtils.class

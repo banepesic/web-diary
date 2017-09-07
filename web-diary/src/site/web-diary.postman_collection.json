@@ -1,0 +1,75 @@
+{
+	"variables": [],
+	"info": {
+		"name": "web-diary",
+		"_postman_id": "34b0d390-6361-626a-08a4-a4f26cff5cab",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET entry test ",
+			"request": {
+				"url": "http://localhost:8080/web-diary/rest/entries/test",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "http://localhost:8080/web-diary/rest/json/entries/"
+			},
+			"response": []
+		},
+		{
+			"name": "GET entries list",
+			"request": {
+				"url": "http://localhost:8080/web-diary/rest/entries/list",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "http://localhost:8080/web-diary/rest/entries/list"
+			},
+			"response": []
+		},
+		{
+			"name": "GET one entry {id}",
+			"request": {
+				"url": "http://localhost:8080/web-diary/rest/entries/4",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": "http://localhost:8080/web-diary/rest/entries/3"
+			},
+			"response": []
+		},
+		{
+			"name": "POST entry - json used in body",
+			"request": {
+				"url": "http://localhost:8080/web-diary/rest/entries/save",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \n    \"date\": \"2017-09-21\",\n    \"text\": \"test save prepare all doc for visa, go to bank\",\n    \"tags\": \"visa money maps\"\n}"
+				},
+				"description": "http://localhost:8080/web-diary/rest/entries/save"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete entry {3}",
+			"request": {
+				"url": "http://localhost:8080/web-diary/rest/entries/delete/3",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": "http://localhost:8080/web-diary/rest/entries/delete/3"
+			},
+			"response": []
+		}
+	]
+}
