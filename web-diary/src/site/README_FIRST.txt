@@ -14,7 +14,7 @@ README:
 
 		Problem:  "maven-surefire-plugin" version problem
 		Fix:   delete in your local repository .m2 where component is:  
-		C:\Users\804427\maven_repos\org\apache\maven\plugins\maven-surefire-plugin  (delete all fodlers )
+		C:\Users\Bane\maven_repos\org\apache\maven\plugins\maven-surefire-plugin  (delete all fodlers )
 		...then refresh maven to pick up needed version
 
 
@@ -84,7 +84,7 @@ README:
 
 	Junit tests:
 
-	C:\Users\804427\workspace\web-diary\src\test\java	
+	C:\Users\bane\workspace\web-diary\src\test\java	
 	
 	Troubleshoot:
 		PROBLEM: test fail : web-diary\src\test\java\com\brolly\diary\service\impl\CrudServiceImplServiceTest.java

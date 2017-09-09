@@ -4,9 +4,12 @@ import com.brolly.diary.service.CrudService;
 import com.brolly.diary.service.DiaryEntryCompareService;
 import com.brolly.diary.service.impl.CrudServiceImpl;
 import com.brolly.diary.service.impl.DiaryEntryCompareServiceImpl;
+import com.brolly.diary.utils.DiffSeparator;
 
 public class ServiceFacade {
 
+	//TODO singletone facade
+	
 	private CrudService crudService;
 	
 	private DiaryEntryCompareService entryCompareService;
@@ -26,7 +29,7 @@ public class ServiceFacade {
 	//TODO
 	public DiaryEntryCompareService getEntryCompareService() {
 		if(entryCompareService == null){
-			return new DiaryEntryCompareServiceImpl();
+			return new DiaryEntryCompareServiceImpl(DiffSeparator.EMPTY);
 		}
 		return entryCompareService;
 	}

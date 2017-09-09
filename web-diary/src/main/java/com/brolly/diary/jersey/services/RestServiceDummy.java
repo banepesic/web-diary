@@ -41,8 +41,6 @@ import com.brolly.diary.utils.AppConstants;
 @Path("/entry")
 public class RestServiceDummy {
 	
-	
-	
 	@GET
 	@Path("/all")
 	@Produces({"application/xml","application/json"})

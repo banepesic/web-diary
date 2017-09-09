@@ -1,6 +1,7 @@
 package com.brolly.diary.service;
 
 import com.brolly.diary.domain.DiaryEntry;
+import com.brolly.diary.utils.AppException;
 
 /**
  * Service for comparing DiaryEntries - to be used for 'diff-tool' API
@@ -11,7 +12,6 @@ public interface DiaryEntryCompareService {
 
 	public boolean compareEntries(DiaryEntry e1, DiaryEntry e2);
 	
-	public boolean findAndCompareEntries(int entry1ID, int entry2ID);
+	public StringBuilder compareEntriesCreateDiffReport(int ent1ID, int ent2ID) throws AppException;
 	
-	public String compareEntriesReport(DiaryEntry e1, DiaryEntry e2);
 }
