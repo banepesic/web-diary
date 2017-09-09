@@ -1,42 +1,31 @@
 README: 
 	
 - Eclipse: 
-	...import project from ZIP
-	
-	- solve Maven issues. Right click on project in workspace, Maven => Update projects 
+	...import sa MAVEN project...solve Maven issues. Right click on project in workspace, Maven => Update projects 
 
-	TROUBLESHOOT:
-	You would probably need to replace project's System lib with the one used by your VM :
-		 Right click on project in workspace, Properties => Java Build Path => tab Libraries 
-			remove exisitng JRE System LIb and add yours
+	1. application is now set to use in-memory DB: hsqldb
 	
-	pom.xml issues: 
-
-		Problem:  "maven-surefire-plugin" version problem
-		Fix:   delete in your local repository .m2 where component is:  
-		C:\Users\Bane\maven_repos\org\apache\maven\plugins\maven-surefire-plugin  (delete all fodlers )
-		...then refresh maven to pick up needed version
-
-
-		1. DB restore script: 
-	\web-diary\src\site\DB_Dump2017_09_03.sql
--------------------------------------------	
-	
-	DB TEST:
-	
-	a) update 
+	===============================================================
+	- To switch to MySQL DB : 
 		
-		<property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">bane</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/diary</property>
+		a)Install MySQL DB and from client tool execute DDL + data script:
+		   \web-diary\src\site\DB_Dump2017_09_03.sql
+		
+		b) replace content of hibernate.cfg.xml with content from  
+		 	web-diary2\web-diary\src\site\Copy of hibernate.cfg.xml
+		 	
+		c) then in hibernate.cfg.xml change credentials to connect to your DB server:  
+		
+			<property name="hibernate.connection.username">root</property>
+        	<property name="hibernate.connection.password">bane</property>
+        	<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/diary</property>
         
-	...in file:
-		web-diary\src\main\resources\hibernate.cfg.xml
-
-	b) run standalone Java Hibernate test on CRUD operations to MySQL DB named 'diary', table 'diary_entry' :
+		d) run standalone Java Hibernate test on CRUD operations to MySQL DB named 'diary', table 'diary_entry' :
 		
-		web-diary\src\main\java\com\brolly\diary\dao\hibernate\HibernateCRUDTest.java
------------------------------------------------------------------------
+			web-diary\src\main\java\com\brolly\diary\dao\hibernate\HibernateCRUDTest.java
+		 	
+-------------------------------------------	
+	--------
 		
 - Tomcat 
 	
@@ -54,7 +43,9 @@ README:
 ------------------------------------------	
 - REST
 		web-diary\src\main\webapp\WEB-INF\web.xml
-			...contains jersey-servlet exposed on :		<url-pattern>/rest/*</url-pattern>
+			...contains jersey-servlet exposed on :		
+			
+			<url-pattern>/rest/*</url-pattern>
 
 	REST TEST DUMMY:
 		http://localhost:8080/web-diary/rest/entry/all
@@ -71,6 +62,7 @@ README:
 		
 						
 		b) Use Chrome POSTMAN plugin and IMPORT this file 
+			
 				web-diary\src\site\web-diary.postman_collection.json		
 				
 			For test URLS with {params}, make sure {id} exist in 
@@ -115,4 +107,14 @@ SOAP TEST
 		
 	 
 
-==============	
+==============
+
+ Diff tool test
+ 
+ 	a) to test diff on 2 inpout Strings
+ 	
+ 	b) after populating in memory DB you can use  DiffUtil.java to test diff on
+ 		  	  DiaryEntry.Text or DiaryEntry.tags
+ 		  	  
+ 	Implemented logic documented in comments in
+ 	LongestCommonSubsequenceUtil.java  	and DiffUtil.java	  	  	

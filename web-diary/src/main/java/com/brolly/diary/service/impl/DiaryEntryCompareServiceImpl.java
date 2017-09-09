@@ -30,7 +30,8 @@ public class DiaryEntryCompareServiceImpl implements DiaryEntryCompareService{
 		if(entry1 == null || entry2 == null){
 			throw new AppException("Compare service error: cannot compare non existing diary entries!");
 		} else{
-			DiffUtil.diffSentence2(entry1.getText(), entry2.getText(), getDiffSeparator().getSeparator());
+			//DiffUtil.diffSentence2(entry1.getText(), entry2.getText(), getDiffSeparator().getSeparator());
+			DiffUtil.diffSentence2(entry1.getTags() , entry2.getTags(), getDiffSeparator().getSeparator());
 		}
 
 		//TODO

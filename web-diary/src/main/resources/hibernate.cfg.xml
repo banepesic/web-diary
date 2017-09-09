@@ -4,15 +4,24 @@
 <!--      <security context=""> -->
 <!--      </security> -->
     <session-factory>
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">bane</property>
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/diary</property>
+    	<property name="hibernate.archive.autodetection">class,hbm</property>
+
+        <property name="hibernate.dialect">org.hibernate.dialect.HSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.hsqldb.jdbcDriver</property>
+		<property name="hibernate.connection.username">sa</property>   
+        <property name="hibernate.connection.password">1</property>   
+        <property name="hibernate.connection.url">jdbc:hsqldb:mem:howtodoinjava</property>   
+
+         <property name="hibernate.hbm2ddl.auto">create</property>
+<!--          <property name="hibernate.hbm2ddl.import_files">create_database.sql</property> -->
+
+        <property name="hibernate.show_sql">true</property>
         <property name="format_sql">true</property>
-        <property name="show_sql">true</property>
-<!--         <property name="format_sql">false</property> -->
+		<property name="use_sql_comments">true</property>
+        
         <mapping resource="com/brolly/diary/domain/DiaryEntry.hbm.xml"></mapping>
         
     </session-factory>
 </hibernate-configuration>
+
+

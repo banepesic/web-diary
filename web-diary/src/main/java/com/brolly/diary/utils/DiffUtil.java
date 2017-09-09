@@ -182,7 +182,7 @@ public class DiffUtil {
 	
 	public static void diffSentence2(final String s1, final String s2, final String separator){
 		
-		System.out.println("Finding diff between:\n " + s1 + "\n...and:\n" + s2);
+		System.out.println("\nFinding diff between:\n " + s1 + "\n...and:\n" + s2);
 		System.out.println("...using separator: " + 
 		(separator.equals(DiffSeparator.EMPTY.getSeparator()) ? "empty string separator" : separator));
 		System.out.println("");
@@ -212,7 +212,8 @@ public class DiffUtil {
 			}//for
 			
 			if(!found){
-				System.out.println("missing word: " + words1Arr[i] + " at index: " + i );
+				//System.out.println("missing word: " + words1Arr[i] + " at index: " + i );
+				System.out.println(DiffActions.DELETE.getAction() + words1Arr[i] + " at index: " + i );
 			}
 		}
 		
@@ -228,7 +229,8 @@ public class DiffUtil {
 			}//for
 			
 			if(!found){
-				System.out.println("added word: " + words2Arr[i] + " at index: " + i );
+				//System.out.println("added word: " + words2Arr[i] + " at index: " + i );
+				System.out.println(DiffActions.ADD.getAction() + words2Arr[i] + " at index: " + i );
 			}
 		}
 	}
@@ -249,16 +251,28 @@ public static void main(String[] args) throws AppException {
 		//		"Apples are green. Kiwi is really fresh. Bananas are not cheap.");
 		
 	
-		/*Comparing Diary entries*/
+		/******Comparing Diary entries: TEXT******/
+		
+		/*
 		DiaryEntryCompareService compareService = new DiaryEntryCompareServiceImpl(DiffSeparator.EMPTY);
+		*/
 		
 		/*test non-existing*/
 		//compareService.compareEntriesCreateDiffReport(100, 4);
 		
 		/*test identical*/
+		/*
 		compareService.compareEntriesCreateDiffReport(4, 10); //TODO create identical report
+		*/
 		
 		/*test different*/
+		/*
 		compareService.compareEntriesCreateDiffReport(2, 10);
+		*/
+	
+		/** Comparing Diary entries: TAGS */
+	DiaryEntryCompareService compareService = new DiaryEntryCompareServiceImpl(DiffSeparator.SEMICOLON);
+	compareService.compareEntriesCreateDiffReport(2, 10);
+	
 	}
 }

@@ -1,5 +1,8 @@
 package com.brolly.diary.dao.hibernate;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
 
@@ -15,19 +18,21 @@ import com.brolly.diary.domain.DiaryEntry;
 public class HibernateCRUDTest {
 
 	@SuppressWarnings("unused")
-	public static void main(String[] args) {
-
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		
+		//connectToInMemoDB();
+		
 		System.out.println("Hibernate version: " + org.hibernate.Version.getVersionString());
 		HibernateCRUDTest appDemo = new HibernateCRUDTest();
-
-		/* Save few entries */
-		DiaryEntry e1 = new DiaryEntry(new Date(), "school;books; learning", "some tex #1 \n some text#1 some tex #1 \n some text#1");
-		DiaryEntry e2 = new DiaryEntry(new Date(), "vacation;visa", "some tex #2 \n some text#2 some tex #2 \n some text#2");
-		DiaryEntry e3 = new DiaryEntry(null, "car;insurance;bday", "some tex #3 \n some text#3 some tex #3 \n some text#3");
-		
-		int e1_ID = appDemo.saveDiaryEntry(e1);
-		int e2_ID = appDemo.saveDiaryEntry(e2);
-		int e3_ID = appDemo.saveDiaryEntry(e3);
+//
+//		/* Save few entries */
+//		DiaryEntry e1 = new DiaryEntry(new Date(), "school;books; learning", "some tex #1 \n some text#1 some tex #1 \n some text#1");
+//		DiaryEntry e2 = new DiaryEntry(new Date(), "vacation;visa", "some tex #2 \n some text#2 some tex #2 \n some text#2");
+//		DiaryEntry e3 = new DiaryEntry(null, "car;insurance;bday", "some tex #3 \n some text#3 some tex #3 \n some text#3");
+//		
+//		int e1_ID = appDemo.saveDiaryEntry(e1);
+//		int e2_ID = appDemo.saveDiaryEntry(e2);
+//		int e3_ID = appDemo.saveDiaryEntry(e3);
 		
 		/* Retrieve and print all entry values - after deletion*/
 		List<DiaryEntry> entries = appDemo.getAllEntries();
@@ -35,16 +40,16 @@ public class HibernateCRUDTest {
 		printEntries(entries,listAllMsg);
 		
 		/* Update an entry */
-		final String newDiaryText = "...now diary entry has fresh value"; 
-		appDemo.updateDiaryEntry(e2_ID, newDiaryText);
-
-		/* Deletes an object */
-		appDemo.deleteDiaryEntry(e2_ID);
-
-		/* Retrieve and print all entry values - after deletion*/
-		List<DiaryEntry> remaingEntries = appDemo.getAllEntries();
-		String listAfterDelMsg = "List of all remained entries";
-		printEntries(remaingEntries, listAfterDelMsg);
+//		final String newDiaryText = "...now diary entry has fresh value"; 
+//		appDemo.updateDiaryEntry(e2_ID, newDiaryText);
+//
+//		/* Deletes an object */
+//		appDemo.deleteDiaryEntry(e2_ID);
+//
+//		/* Retrieve and print all entry values - after deletion*/
+//		List<DiaryEntry> remaingEntries = appDemo.getAllEntries();
+//		String listAfterDelMsg = "List of all remained entries";
+//		printEntries(remaingEntries, listAfterDelMsg);
 
 	}
 
@@ -118,4 +123,6 @@ public class HibernateCRUDTest {
 		}
 		
 	}
+	
+	
 }

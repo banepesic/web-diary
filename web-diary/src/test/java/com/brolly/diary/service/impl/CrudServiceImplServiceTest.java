@@ -22,6 +22,7 @@ public class CrudServiceImplServiceTest {
 	 */
 	@Before
 	public void setUp() {
+		System.out.println(" * * * Make sure Publisher is up and running: CrudWSPublisher.java");
 		crudServiceImpl = new CrudServiceImplService();
 		crudServiceImplPort = crudServiceImpl.getCrudServiceImplPort();
 	}
@@ -44,7 +45,7 @@ public class CrudServiceImplServiceTest {
 		assertEquals("Hello dear: John", sayHelloResponse);
 	}
 
-	/*TODO test all CRUD operations - use */
+	/*TODO test all CRUD operations  */
 	@Test
 	public void testGetAllDiariesWSOperation() {
 		List<DiaryEntry> allDiaryEntries = crudServiceImplPort.getAllDiaryEntries();
